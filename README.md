@@ -1,4 +1,3 @@
-````markdown
 # CAN Data Decoder
 
 This project provides a Python-based tool for decoding raw CAN bus log files into human-readable signals using a DBC database.  
@@ -114,4 +113,5 @@ MIT License – feel free to use and modify.
 
 Would you like me to also add a **sample input CSV + output CSV snippet** inside the README so others can see exactly how the decoding looks?
 ```
+
 
