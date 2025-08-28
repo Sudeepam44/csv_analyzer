@@ -1,0 +1,794 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Calibration EVCU OBC Motor_controller_HEPU Motor_controller_FD Display Charge_Controller BMS Handle_Control Vehicle iBooster_ECU iBooster VCU BMS DCDC HCM OBC
+
+
+VAL_TABLE_ CAL_resp 54 "Resource/ function not available" 48 "Invalid_cmd" 32 "Cold_rst" 0 "OK" ;
+VAL_TABLE_ calibration_command 21 "REBOOT_CMD" 20 "EEPROM_RST_CMD" 19 "ODO_CMD" 18 "VIN_CMD" 17 "OTA_CMD" 7 "DISCONNECT" 1 "CONNECT" ;
+VAL_TABLE_ FAULT_STATES 3 "CHARGE_FAULT" 2 "DRIVE_FAULT" 1 "STARTUP_FAULT" 0 "NO_FAULT" ;
+VAL_TABLE_ Controller_States 4 "BRAKE" 3 "REVERSE_T" 2 "FORWARD_T" 1 "ZERO_T" 0 "INIT" ;
+VAL_TABLE_ Monitor_States 8 "RUNTIME" 7 "POST_IGN_CHECK" 6 "PRE_IGN_CHECK" 5 "POST_CHG_CHECK" 4 "PRE_CHG_CHECK" 3 "SYSTEM_CHECK_2" 2 "SYSTEM_ CHECK_1" 1 "INIT_FAIL" 0 "INIT" ;
+VAL_TABLE_ ErrorCodes 117 "emg chg stop" 116 "chg station fault" 115 "OBC comm error" 114 "OBC voltage error" 113 "OBC temp error" 112 "OBC hardware fault" 87 "Bat temp error" 86 "Cont fb error" 85 "Cell low voltage" 83 "Pre chg error" 82 "Regen current" 81 "Over charge current" 80 "Over discharge current" 71 "Aux Low" 70 "DC-DC fault" 20 "Cell dev error" 2 "DISPLAY CAN Fault" 88 "BMS com Error" 69 "Throttle error" 65 "BMS CAN Fault" 64 "MC CAN Fault" 128 "No Fault" 89 "Contactor Init Fault" 68 "CC CAN Fault" 67 "OBC CAN Fault" ;
+VAL_TABLE_ Speed_Mode 4 "Hill Mode" 3 "Sport Mode" 2 "Normal Mode" 1 "Eco Mode" 0 "Turtle Mode" ;
+VAL_TABLE_ packet_ID 5 "MSG_5" 4 "MSG_4" 3 "MSG_3" 2 "MSG_2" 1 "MSG_1" 0 "MSG_0" ;
+VAL_TABLE_ op_mode 4 "emergency" 3 "error" 2 "ok" 1 "init" 0 "start" ;
+VAL_TABLE_ OBC_control 1 "not_charging" 0 "charging" ;
+VAL_TABLE_ charger_connected 1 "connected" 0 "not connected" ;
+VAL_TABLE_ fire_mode 1 "fire_modeON" 0 "fire_modeOFF" ;
+VAL_TABLE_ EVCU_state 8 "CRIT_FAULT" 7 "LOW_POWER" 6 "FAULT" 5 "TEMP_FAULT" 4 "CHARGING" 3 "REVERSE" 2 "FORWARD" 1 "NEUTRAL" 0 "POWER_ON" ;
+VAL_TABLE_ CV_mode 1 "CV_modeon" 0 "CV_modeoff" ;
+VAL_TABLE_ contactor_on_inverse 2 "on" 0 "off" ;
+VAL_TABLE_ contactor_on 1 "on" 0 "off" ;
+VAL_TABLE_ charge_complete 1 "charge_complete" 0 "charge_incomplete" ;
+VAL_TABLE_ chiller_enable 1 "on" 0 "off" ;
+VAL_TABLE_ fault_state 1 "error" 0 "normal" ;
+VAL_TABLE_ brake_state 1 "brake" 0 "Unbrake" ;
+VAL_TABLE_ controller_state 1 "error" 0 "normal" ;
+VAL_TABLE_ rotational_direction 1 "inversion" 0 "possitive turn" ;
+VAL_TABLE_ motor_state 1 "error" 0 "normal" ;
+VAL_TABLE_ cruise 1 "cruise" 0 "Uncruising" ;
+VAL_TABLE_ motor_rotation 1 "Rotation" 0 "Stop" ;
+VAL_TABLE_ speedModes 2 "high_speed" 1 "medium_speed" 0 "low_speed" ;
+VAL_TABLE_ gear_position 2 "Reverse" 1 "Forward" 0 "P" ;
+VAL_TABLE_ NoYes 1 "Yes" 0 "No" ;
+VAL_TABLE_ BrakeOK 1 "Brake OK / Ready to Actuate" 0 "Brake Error" ;
+VAL_TABLE_ Gear 2 "Reverse" 1 "Drive" 0 "Neutral/Park" ;
+
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ EVCU_lowBattery : 0|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_generalWarning : 0|3@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pass : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ left : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ right : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lowbeam : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ highbeam : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ horn : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ passx : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ empty : 7|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reserved : 8|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_L2_duty : 55|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_PP_adc : 47|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_driveCurrent m0 : 55|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_emergencyStop m0 : 49|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_fastChargerFault m0 : 50|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargeFail m0 : 51|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargerComErr m0 : 52|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_cellDev m0 : 53|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargerOverTemp m0 : 54|1@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2147907716 EVCU_CAL_TX: 8 Vector__XXX
+ SG_ cal_ack_err_code : 15|8@0+ (1,0) [0|0] ""  Calibration
+ SG_ cal_ack_packet_id : 7|8@0+ (1,0) [0|0] ""  Calibration
+
+BO_ 2147580036 EVCU_CAL_RX: 8 Calibration
+ SG_ cal_data_5 m5 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_data_4 m4 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_data_3 m3 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_data_2 m2 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_data_1 m1 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_sub_command : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_packet_count : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_packet_id M : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ cal_command : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 73 EVCU_TX_MSG: 8 EVCU
+ SG_ EVCU_turtlemode m1 : 36|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_tripB_ack m1 : 42|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_tripA_ack m1 : 43|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_start m1 : 26|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_shutdown m1 : 44|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_reverse m1 : 39|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_readytodrive m1 : 25|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_neutral m1 : 24|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_modeOverride m1 : 46|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_lowpower m1 : 47|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_forward m1 : 38|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_fireMode m1 : 41|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_ecoMode m1 : 37|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_currentState m1 : 31|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargingActive m1 : 33|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargerConnected m1 : 34|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargeOverride m1 : 45|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargeComplete m1 : 32|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_boostMode m1 : 35|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_BMS_init m1 : 27|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_rdCANloss m1 : 13|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_obcCANloss m1 : 11|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_mcCANloss m1 : 12|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_faultDetected m1 : 9|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_crit_fault m1 : 8|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_ccCANloss m1 : 10|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_bmsCANloss m1 : 14|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_batter_crit m1 : 23|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_notCharging m1 : 15|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_throttle_ready m1 : 61|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_error_handler m1 : 58|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_cont_on m1 : 60|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_CAN_check_pass m1 : 59|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_AUX_ready m1 : 62|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_DCDC_ready m1 : 63|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_batLow m0 : 32|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargerInputV m0 : 53|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargerFail m0 : 55|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_commFault m0 : 56|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_HardwareFault m0 : 57|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_underVoltage m0 : 58|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_overVoltage m0 : 59|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_overCurrent m0 : 60|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_mcOvertemp m0 : 61|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_contInit m0 : 48|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_bmsComErr m0 : 49|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_batTemp m0 : 50|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_contFb m0 : 51|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_cellLow m0 : 52|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_isolation_err m0 : 54|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_chargeCurrent m0 : 40|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_soc_estimation_err m0 : 41|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_auxLow m0 : 33|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_dcdcFault m0 : 34|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_throttleError m0 : 35|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_OBCcanLost m0 : 36|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_CCcanLost m0 : 37|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_RDcanLost m0 : 38|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_MCcanLost m0 : 39|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_BMScanLost m0 : 24|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_faultState m0 : 23|3@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_monitorState m0 : 15|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_mcState m0 : 11|3@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_M_ID M : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EVCU_motorOvertemp m0 : 62|1@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 66 RD_TX_MSG: 8 Display
+ SG_ RD_tripA_reset : 9|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ RD_tripB_reset : 10|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ RD_firemode : 11|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ RD_regen_profile : 13|2@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 67 RD_RX_MSG3: 8 Vector__XXX
+ SG_ VCU_RD_throttle_out : 31|16@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_throttle_in : 15|16@0+ (1,0) [0|0] ""  Display
+ SG_ zero_30_time : 47|24@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 65 RD_RX_MSG2: 8 Vector__XXX
+ SG_ VCU_RD_battery_critical m0 : 53|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_PP_adc m0 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_tripA_pwr m4 : 47|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ VCU_RD_tripA_econ m5 : 47|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ VCU_RD_tripA_avg_speed m5 : 31|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ VCU_RD_tripA m5 : 15|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ VCU_RD_L2_duty m2 : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_accessory_relay m0 : 54|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCU_RD_CC_CAN m0 : 31|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_reverse_relay m0 : 41|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_chiller_relay m0 : 40|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCU_RD_C_trip_pwr m4 : 31|16@0+ (0.1,0) [0|0] ""  Display
+ SG_ VCU_RD_tripB_pwr m4 : 15|16@0+ (0.1,0) [0|6553.5] ""  Display
+ SG_ VCU_RD_C_trip_econ m3 : 47|16@0+ (0.1,0) [0|6553.5] ""  Display
+ SG_ VCU_RD_C_trip_avg_speed m3 : 31|16@0+ (0.1,0) [0|6553.5] ""  Display
+ SG_ VCU_RD_C_trip m3 : 15|16@0+ (0.1,0) [0|6553.5] ""  Display
+ SG_ VCU_RD_tripB_econ m2 : 47|16@0+ (0.1,0) [0|6553.5] ""  Display
+ SG_ VCU_RD_tripB_avg_speed m2 : 31|16@0+ (0.1,0) [0|6553.5] ""  Display
+ SG_ VCU_RD_tripB m2 : 15|16@0+ (0.1,0) [0|65535] ""  Display
+ SG_ VCU_RD_economy m1 : 55|16@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_range m1 : 47|8@0+ (0.01,0) [0|2.55] ""  Display
+ SG_ VCU_RD_odo m1 : 15|32@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_display_CAN m0 : 55|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_ign_relay m0 : 42|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_emergency_relay m0 : 43|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_BMS_relay m0 : 44|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_MC_relay m0 : 45|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_R_out m0 : 46|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_N_out m0 : 47|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_D_out m0 : 32|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_regen m0 : 34|2@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_start_sw m0 : 35|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_kill_sw m0 : 36|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_BR m0 : 37|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_R m0 : 38|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_D m0 : 39|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_charge_complete m0 : 24|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_L2 m0 : 25|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_GBT m0 : 26|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_ign m0 : 27|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_OBC_CAN m0 : 28|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_BMS_CAN m0 : 29|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_MC_CAN m0 : 30|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_warnings m0 : 23|8@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_errorcode m0 : 15|8@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_dataID_1 M : 7|8@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_Destination_Reached m0 : 52|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_solar m0 : 51|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_tripA_regen m7 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_tripB_regen m8 : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_C_trip_regen m9 : 15|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_tripA_time m6 : 15|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_tripB_time m7 : 15|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_C_trip_time m8 : 15|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 64 RD_RX_MSG1: 8 Vector__XXX
+ SG_ VCU_RD_tripA_ack : 8|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_charging_state : 10|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_RD_aux_voltage : 31|16@0+ (0.01,0) [0|0] "V"  Display
+ SG_ VCU_RD_speed : 47|8@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_fire_mode : 16|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_shutdown : 18|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_charger_connected : 19|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_mode : 22|3@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_tripB_ack : 23|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_handbrake : 17|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_ready_to_drive : 11|1@0+ (1,0) [0|0] ""  Display
+ SG_ VCU_RD_current_state : 15|4@0+ (1,0) [0|0] ""  Display
+
+BO_ 38 HEPU_RX_MSG3: 8 Vector__XXX
+ SG_ VCU_battery_voltage : 23|16@0+ (0.1,0) [0|0] ""  Motor_controller_HEPU
+ SG_ VCU_battery_current : 7|16@0+ (0.02,-400) [0|0] ""  Motor_controller_HEPU
+
+BO_ 35 HEPU_RX_MSG2: 8 Vector__XXX
+ SG_ VCU_rpm_set : 55|16@0+ (0.25,0) [0|0] ""  Motor_controller_HEPU
+ SG_ VCU_regen_current_set : 39|16@0+ (1,0) [0|65535] ""  Motor_controller_HEPU
+ SG_ VCU_bus_current_set : 23|16@0+ (0.02,-400) [0|0] ""  Motor_controller_HEPU
+ SG_ VCU_phase_current_set : 7|16@0+ (0.01,0) [0|0] ""  Motor_controller_HEPU
+
+BO_ 33 HEPU_RX_MSG1: 8 Vector__XXX
+ SG_ VCU_torque_req : 39|16@0+ (0.02,-665) [0|0] "Nm"  Motor_controller_HEPU
+ SG_ VCU_speed_req : 23|16@0+ (1,0) [0|0] "rpm"  Motor_controller_HEPU
+ SG_ VCU_HEPU_direction : 4|2@0+ (1,0) [0|0] ""  Motor_controller_HEPU
+ SG_ VCU_HEPU_op_mode : 2|2@0+ (1,0) [0|0] ""  Motor_controller_HEPU
+ SG_ VCU_HEPU_enable : 0|1@0+ (1,0) [0|0] ""  Motor_controller_HEPU
+
+BO_ 1539 HEPU_TX_MSG4: 8 Motor_controller_HEPU
+ SG_ HEPU_Al_plate_temp_LV5 : 25|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_Al_plate_temp_LV4 : 24|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_stator_temp_LV5 : 23|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_stator_temp_LV4 : 22|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_phase_over_current : 21|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_motor_stalling : 20|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_buss_off : 19|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_VCU_communication_loss : 18|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_cont_temp_sensor_fail : 17|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_motor_temp_sensor_fail : 16|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_overspeed_LV3 : 15|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_overspeed_LV2 : 14|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_AUX_over_voltage : 13|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_AUX_under_voltage : 12|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_encoder_failure : 11|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_EEPROM_failure : 10|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_Al_plate_temp_LV3 : 9|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_Al_plate_temp_LV2 : 8|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_stator_temp_LV3 : 7|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_stator_temp_LV2 : 6|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_DC_over_voltage : 4|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_DC_low_voltage_LV3 : 3|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_DC_low_voltage_LV2 : 2|1@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 804 HEPU_TX_MSG3: 8 Motor_controller_HEPU
+ SG_ HEPU_controller_temp : 15|8@0+ (1,-48) [0|0] "C" Vector__XXX
+ SG_ HEPU_motor_temp : 7|8@0+ (1,-48) [0|0] "C" Vector__XXX
+
+BO_ 36 HEPU_TX_MSG2: 8 Motor_controller_HEPU
+ SG_ HEPU_speed_checksum : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_motor_shaft_speed_pulse : 35|12@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_present_speed_alive_count : 55|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_RPM : 23|16@0+ (0.25,0) [0|0] "rpm" Vector__XXX
+ SG_ HEPU_bus_voltage : 7|16@0+ (0.01,0) [0|0] "V" Vector__XXX
+
+BO_ 34 HEPU_TX_MSG1: 8 Motor_controller_HEPU
+ SG_ HEPU_present_opmode : 49|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_present_rotation_direction : 51|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_motorSts_aliveCounter : 55|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HEPU_max_torque : 39|16@0+ (0.02,0) [0|0] "Nm" Vector__XXX
+ SG_ HEPU_current_torque : 23|16@0+ (0.02,-665) [0|0] "Nm" Vector__XXX
+ SG_ HEPU_bus_current : 7|16@0+ (0.01,0) [0|0] "A" Vector__XXX
+
+BO_ 97 CC_RX_MSG: 8 EVCU
+ SG_ CC_setmax_voltage m1 : 39|16@0+ (0.1,0) [0|0] "V"  Charge_Controller
+ SG_ CC_setmax_current m1 : 23|16@0+ (0.1,0) [0|0] "A"  Charge_Controller
+ SG_ CC_set_voltage m0 : 39|16@0+ (0.1,0) [0|0] "V"  Charge_Controller
+ SG_ CC_set_current m0 : 23|16@0+ (0.1,0) [0|0] "A"  Charge_Controller
+ SG_ CC_RX_dataID M : 0|8@1+ (1,0) [0|0] ""  Charge_Controller
+ SG_ Charge_ready : 11|1@1+ (1,0) [0|0] ""  Charge_Controller
+ SG_ EVCU_state_CC : 12|4@1+ (1,0) [0|0] ""  Charge_Controller
+
+BO_ 98 CC_TX_MSG: 8 Charge_Controller
+ SG_ CC_ins_voltage m1 : 32|16@1+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ CC_ins_current m1 : 16|16@1+ (0.1,0) [0|0] "A" Vector__XXX
+ SG_ CC_max_voltage m0 : 32|16@1+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ CC_max_current m0 : 16|16@1+ (0.1,0) [0|0] "A" Vector__XXX
+ SG_ CC_TX_dataID M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CC_CCS_connected : 12|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CC_CHADEMO_connected : 13|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CC_L2_connected : 14|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CC_GBT_connected : 15|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2566907380 OBC_RX_MSG: 8 EVCU
+ SG_ OBC_control : 32|8@1+ (1,0) [0|0] ""  OBC
+ SG_ OBC_heating_relay : 40|1@1+ (1,0) [0|0] ""  OBC
+ SG_ OBC_BCM_request : 41|1@1+ (1,0) [0|0] ""  OBC
+ SG_ OBC_allowable_current : 16|16@1+ (0.1,0) [0|0] "A"  OBC
+ SG_ OBC_allowable_voltage : 0|16@1+ (0.1,0) [0|0] "V"  OBC
+
+BO_ 2566869221 OBC_TX_MSG: 8 OBC
+ SG_ OBC_batteryConnection_status : 39|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_communication_status : 38|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_start_state : 37|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_output_overcurrent : 36|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_input_V_status : 35|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_low_V_limit : 34|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_temperature : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_temp_failure : 33|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_hardware_malfunction : 32|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_output_current : 16|16@1+ (0.1,0) [0|0] "A" Vector__XXX
+ SG_ OBC_output_voltage : 0|16@1+ (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 49 BMS_RX_MSG: 8 EVCU
+ SG_ contactor_on_inverse : 40|8@1+ (1,0) [0|0] ""  BMS
+ SG_ contactor_on : 32|8@1+ (1,0) [0|0] ""  BMS
+ SG_ GBT_connected_BMS : 14|1@1+ (1,0) [0|0] ""  BMS
+ SG_ fireMode_BMS : 13|1@1+ (1,0) [0|0] ""  BMS
+ SG_ L2_charger_connected_BMS : 12|1@1+ (1,0) [0|0] ""  BMS
+ SG_ EVCU_state_BMS : 8|4@1+ (1,0) [0|0] ""  BMS
+
+BO_ 2432176269 FD_MSG2: 8 Motor_controller_FD
+ SG_ peak_line_current_protection : 62|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MOSFET_lowerBridge_fault : 61|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ MOSFET_upperBridge_fault : 60|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ line_current_zero : 59|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ phase_line_short : 58|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ phase_current_zero : 57|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ phase_current : 56|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ controller_overTemp : 55|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_overTemp : 54|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ anti_theft : 53|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ voltage_failure : 52|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ phase_current_overflow : 51|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ current_protection_restart : 50|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Accelerator_pedal_fault : 49|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_hall_error : 48|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bus_current : 16|16@1+ (0.1,0) [0|0] "A" Vector__XXX
+ SG_ bus_voltage : 0|16@1+ (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 2432176282 FD_MSG1: 8 Motor_controller_FD
+ SG_ motor_temperature : 56|8@1+ (1,-40) [0|0] "" Vector__XXX
+ SG_ controller_temperature : 48|8@1+ (1,-40) [0|0] "" Vector__XXX
+ SG_ RPM : 32|16@1+ (1,0) [0|0] "rpm" Vector__XXX
+ SG_ fault : 31|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ brake : 30|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ controller_state : 29|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ direction : 28|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motorState : 27|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_rotation : 26|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Throttle : 8|16@1+ (1,0) [0|256] "" Vector__XXX
+ SG_ idle : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cruise : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ speedMode : 2|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ gear_state : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 50 BMS_TX_MSG: 8 BMS
+ SG_ Packet_ID M : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ opMode m0 : 16|8@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ lowestCell m0 : 24|16@1+ (0.001,0) [0|5] "V" Vector__XXX
+ SG_ highestCell m0 : 40|16@1+ (0.001,0) [0|5] "V" Vector__XXX
+ SG_ highestTemp m0 : 56|8@1+ (1,0) [0|0] "C" Vector__XXX
+ SG_ time_to_80_hh m1 : 16|8@1+ (1,0) [0|255] "hours" Vector__XXX
+ SG_ time_to_80_mm m1 : 24|8@1+ (1,0) [0|59] "minutes" Vector__XXX
+ SG_ batteryCapacity m1 : 32|8@1+ (1,0) [0|255] "Ah" Vector__XXX
+ SG_ packVoltage m1 : 48|16@1+ (0.1,0) [0|1500] "V" Vector__XXX
+ SG_ time_to_100_hh m2 : 16|8@1+ (1,0) [0|255] "hours" Vector__XXX
+ SG_ time_to_100_mm m2 : 24|8@1+ (1,0) [0|59] "minutes" Vector__XXX
+ SG_ current m2 : 32|16@1- (0.01,0) [-327.68|327.67] "A" Vector__XXX
+ SG_ soc m2 : 48|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ soh m2 : 56|8@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ lv_error : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ isolation_error : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ contactor_fb_error : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ battery_temp_error : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ bms_comm_error : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_current_error : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ SOC_estimation_err : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ cell_balancing_error : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ chrg_complete_flag m1 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ cv_mode m1 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ charge_current_lim m1 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ over_temp m1 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ low_soc m1 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ chiller_enable m1 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ charging m1 : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ coulomb_count m3 : 39|32@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2364539169 momentary_left_throttle: 4 Handle_Control
+ SG_ pass : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ left : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ right : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ headlamp : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ wiper : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ horn : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reserved : 6|26@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2297430304 momentary_right_throttle: 4 Handle_Control
+ SG_ IGN_N : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reverse : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ mode : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setting : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ regen : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ D : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ trigger : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reserved : 7|25@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 293 AlternateThrottleposition: 8 Vector__XXX
+
+BO_ 294 AlternateGear: 8 Vector__XXX
+
+BO_ 599 AlternateVehiclspeed: 8 Vector__XXX
+
+BO_ 121 BootloaderCommand: 8 Vector__XXX
+ SG_ BootloaderCommand : 7|64@0+ (1,0) [0|1.8446744074E+19] "" Vector__XXX
+
+BO_ 525 HillHold: 3 Vehicle
+ SG_ VehicleSpeed : 0|8@1+ (1,0) [0|255] "mph"  iBooster_ECU
+ SG_ VehicleGear : 16|2@1+ (1,0) [0|3] ""  iBooster_ECU
+ SG_ ThrottlePedalPosition : 8|8@1+ (1,0) [0|100] "%"  iBooster_ECU
+
+BO_ 559 BrakeStatus: 3 iBooster_ECU
+ SG_ PWMinValid : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ AnalogInValid : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PressureSensorFault : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HillHoldActive : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PedalPosition : 0|8@1+ (0.2,0) [0|51] "mm"  Vehicle
+ SG_ DriverBrakeApplied : 17|1@1+ (1,0) [0|1] ""  Vehicle
+ SG_ BrakeServoStatus : 18|1@1+ (1,0) [0|1] ""  Vehicle
+ SG_ BrakeFluidPressure : 8|8@1+ (0.7,0) [0|178.5] "bar"  Vehicle
+ SG_ BrakeFluidPresent : 19|1@1+ (1,0) [0|1] ""  Vehicle
+ SG_ BrakeApplied : 16|1@1+ (1,0) [0|1] ""  Vehicle
+
+BO_ 526 BrakeCommand: 1 Vehicle
+ SG_ Brakerequesr : 0|8@1+ (0.4,0) [0|102] "%"  iBooster_ECU
+
+BO_ 272 Control_Command_1: 8 VCU
+ SG_ Heart_rate : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 273 Control_Command_2: 8 VCU
+ SG_ DCDC_enable : 3|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ quick_charge_contactor : 19|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ slow_charge_contactor : 17|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ main_positive_contactor : 33|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PTC_contactor : 35|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ AC_contactor : 37|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HCM_shutsdown_hibernation : 38|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HCM_adhesion_detection : 39|1@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 305 Control_Command_4: 8 BMS
+ SG_ OBC_instruct : 1|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ charging_voltage : 23|16@0+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ charging_current : 39|16@0+ (0.1,-1000) [0|0] "A" Vector__XXX
+
+BO_ 1595 Control_Command_5: 8 BMS
+ SG_ CP_duty_cycle : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ CP_frequency : 31|8@0+ (10,0) [0|0] "" Vector__XXX
+ SG_ CC_resistance : 47|16@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 576 DCDC_State_1: 8 DCDC
+ SG_ DCDC_running_state : 3|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ fault_grade : 5|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_overpressure : 8|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ input_underpressure : 9|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ enter_overpressure : 10|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ overtemperature_failure : 11|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ self_inspection_fault : 12|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ outptut_overflow : 13|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ communication_failure : 14|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_voltage : 23|8@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ output_current_value : 31|8@0+ (1,0) [0|0] "A" Vector__XXX
+ SG_ temperature_scale : 39|8@0+ (1,-40) [0|0] "C" Vector__XXX
+ SG_ version_number : 55|8@0+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ heart_rate : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 352 HCM_State_1: 8 HCM
+ SG_ HCM_running_state : 3|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ fault_grade : 5|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ ON_file_status : 6|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ charging_wake_up_state : 7|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ HCM_pre_charge_state : 11|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ main_positive_contactor : 12|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pre_charge_contactor_status : 13|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PTC_contactor_status : 14|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ AC_contactor_status : 15|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ slow_charge_contactor_state : 16|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ quick_charge_contactor_state : 17|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ self_inspection_fault : 18|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ high_voltage_interlock_fault : 19|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ low_voltage_power_supply_failure : 21|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ VCU_communication_failure : 22|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ BMS_communication_failure : 23|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ main_positive_contactor_is_fault : 25|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pre_charge_contactor_fault : 27|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PTC_contactor_fault : 29|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ AC_contactor_fault : 31|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ fast_charge_contactor_fault : 33|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ slow_charge_contactor_fault : 35|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ open_cover_fault : 36|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ version_number : 55|8@0+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ heart_number : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 353 HCM_State_2: 8 HCM
+ SG_ main_positive_contactor : 7|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ main_positive_precharg_contactor : 23|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ copositive_contactor : 39|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ busbar_voltage : 55|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 354 HCM_State_3: 8 HCM
+ SG_ slow_charge_contactor : 7|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ fast_charge_contactor : 23|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ upper_contactor : 39|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ PTC_contactor : 55|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 355 HCM_State_4: 8 HCM
+ SG_ battery_voltage : 7|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ busoff_state : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 880 OBC_State_1: 8 OBC
+ SG_ running_state : 3|4@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ fault_grade : 5|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PFC_underVoltage : 8|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ PFC_overVoltage : 9|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ OBC_lack_of_phase : 10|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_overflow : 11|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ over_temperature_failure : 16|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_underVoltage : 17|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_overVoltage : 18|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ input_underVoltage : 19|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ enter_overVoltage : 20|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ hardware_malfunction : 21|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ communication_timeout : 22|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ self_inspection_fault : 23|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ temperature_scale : 31|8@0+ (1,-40) [0|0] "C" Vector__XXX
+ SG_ version_number : 55|8@0+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ heart_rate : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 881 OBC_State_2: 8 OBC
+ SG_ input_current_on : 7|16@0+ (0.1,-1000) [0|0] "A" Vector__XXX
+ SG_ input_voltage : 23|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+ SG_ output : 39|16@0+ (0.1,-1000) [0|0] "A" Vector__XXX
+ SG_ output_voltage : 55|16@0+ (0.1,0) [0|0] "V" Vector__XXX
+
+BO_ 788 EPS_RX_MSG: 8 Vector__XXX
+ SG_ mode : 0|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ zeroPointSet : 2|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ setAngle : 15|16@0+ (1,0) [0|0] "deg" Vector__XXX
+ SG_ setAngularVelocity : 31|16@0+ (1,0) [0|0] "deg/s" Vector__XXX
+ SG_ carSpeed : 47|16@0+ (1,0.003125) [0|0] "km/h" Vector__XXX
+
+BO_ 399 EPS_TX_MSG: 8 Vector__XXX
+ SG_ mode_fb : 0|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EPSfault : 1|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ zeroPoint_fb : 2|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ currentAngle : 15|16@0- (1,0) [0|0] "deg" Vector__XXX
+ SG_ currentAngularVelocity : 31|16@0- (1,0) [0|0] "deg/s" Vector__XXX
+ SG_ currentTorque : 47|8@0- (0.1,0) [0|0] "NM" Vector__XXX
+ SG_ EPStemperature : 55|8@0- (1,0) [0|0] "°C" Vector__XXX
+ SG_ EPSfaultLevel_1 : 56|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EPSfaultLevel_2 : 57|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EPSfaultLevel_3 : 58|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ EPScommunicationError : 59|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultList : 63|4@0+ (1,0) [0|0] "" Vector__XXX
+
+
+
+CM_ BU_ OBC "Send Cycle: 100";
+CM_ BU_ BMS "Send Cycle: 50ms";
+CM_ BU_ VCU "Send Cycle: 50ms";
+CM_ BU_ DCDC "Send Cycle: 100ms";
+CM_ BU_ HCM "Send Cycle: 100";
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ BO_ 50 "BMS controller";
+CM_ SG_ 50 Packet_ID "Multiplexor ID";
+CM_ SG_ 50 opMode "BMS operating mode
+";
+CM_ SG_ 50 lowestCell "Lowest cell voltage
+";
+CM_ SG_ 50 highestCell "Highest cell voltage";
+CM_ SG_ 50 highestTemp "Highest cell temperature";
+CM_ SG_ 50 time_to_80_hh "Time (HH) to charge to 80%";
+CM_ SG_ 50 time_to_80_mm "Time (MM) to charge to 80%";
+CM_ SG_ 50 batteryCapacity "Total battery capacity available";
+CM_ SG_ 50 packVoltage "Pack voltage";
+CM_ SG_ 50 time_to_100_hh "Time (HH) to full charge";
+CM_ SG_ 50 time_to_100_mm "Time (MM) to full charge";
+CM_ SG_ 50 current "Battery current";
+CM_ SG_ 50 soc "State of charge of the battery";
+CM_ SG_ 50 soh "State of health of the battery";
+CM_ SG_ 50 lv_error "Low voltage error flag
+";
+CM_ SG_ 50 isolation_error "Precharger error flag";
+CM_ SG_ 50 contactor_fb_error "Contactor feedback error flag";
+CM_ SG_ 50 battery_temp_error "Battery high temperature error flag";
+CM_ SG_ 50 bms_comm_error "BMS internal communication error flag";
+CM_ SG_ 50 BMS_current_error "Overcurrent (discharge) flag";
+CM_ SG_ 50 SOC_estimation_err "Overcurrent (charge) flag";
+CM_ SG_ 50 cell_balancing_error "Cell balancing error flag";
+CM_ SG_ 50 chrg_complete_flag "Charge complete flag";
+CM_ SG_ 50 cv_mode "Constant voltage mode flag";
+CM_ SG_ 50 charge_current_lim "Charge current limit exceeded flag";
+CM_ SG_ 50 over_temp "High temperature warning flag during charge ";
+CM_ SG_ 50 low_soc "Low SOC warning during charge flag";
+CM_ SG_ 50 chiller_enable "Chiller enable command";
+CM_ SG_ 50 charging "Charging status flag";
+CM_ BO_ 272 "";
+CM_ BO_ 273 "";
+CM_ BO_ 788 "EVCU send message";
+CM_ BO_ 399 "EPS send message";
+BA_DEF_ SG_  "SPN" INT 0 524287;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_  "DatabaseVersion" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_  "DatabaseCompiler" STRING ;
+BA_DEF_DEF_  "SPN" 0;
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_DEF_DEF_  "DatabaseVersion" "DEMO PLUS";
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "ProtocolType" "";
+BA_DEF_DEF_  "DatabaseCompiler" "";
+BA_ "BusType" "CAN";
+BA_ "DatabaseCompiler" "CSS ELECTRONICS (WWW.CSSELECTRONICS.COM)";
+BA_ "DatabaseVersion" "1.0.0";
+BA_ "VFrameFormat" BO_ 2147907716 1;
+BA_ "VFrameFormat" BO_ 2147580036 1;
+BA_ "VFrameFormat" BO_ 73 0;
+BA_ "VFrameFormat" BO_ 66 0;
+BA_ "VFrameFormat" BO_ 67 0;
+BA_ "VFrameFormat" BO_ 65 0;
+BA_ "VFrameFormat" BO_ 64 0;
+BA_ "VFrameFormat" BO_ 38 0;
+BA_ "VFrameFormat" BO_ 35 0;
+BA_ "VFrameFormat" BO_ 33 0;
+BA_ "VFrameFormat" BO_ 1539 0;
+BA_ "VFrameFormat" BO_ 804 0;
+BA_ "VFrameFormat" BO_ 36 0;
+BA_ "VFrameFormat" BO_ 34 0;
+BA_ "VFrameFormat" BO_ 97 0;
+BA_ "VFrameFormat" BO_ 98 0;
+BA_ "VFrameFormat" BO_ 2566907380 1;
+BA_ "VFrameFormat" BO_ 2566869221 1;
+BA_ "VFrameFormat" BO_ 49 0;
+BA_ "VFrameFormat" BO_ 2432176269 1;
+BA_ "VFrameFormat" BO_ 2432176282 1;
+BA_ "VFrameFormat" BO_ 50 0;
+BA_ "VFrameFormat" BO_ 788 0;
+BA_ "VFrameFormat" BO_ 399 0;
+VAL_ 2147580036 cal_command 1 "CONNECT" 7 "DISCONNECT" 17 "OTA_CMD" 18 "VIN_CMD" 19 "ODO_CMD" 20 "EEPROM_RST_CMD" 21 "REBOOT_CMD" 22 "MC_FW_UPDATE" ;
+VAL_ 73 EVCU_currentState 8 "CRIT_FAULT" 7 "LOW_POWER" 6 "FAULT" 5 "TEMP_FAULT" 4 "CHARGING" 3 "REVERSE" 2 "FORWARD" 1 "NEUTRAL" 0 "POWER_ON" ;
+VAL_ 73 EVCU_faultState 3 "CHARGE_FAULT" 2 "DRIVE_FAULT" 1 "STARTUP_FAULT" 0 "NO_FAULT" ;
+VAL_ 73 EVCU_monitorState 8 "RUNTIME" 7 "POST_IGN_CHECK" 6 "PRE_IGN_CHECK" 5 "POST_CHG_CHECK" 4 "PRE_CHG_CHECK" 3 "SYSTEM_CHECK_2" 2 "SYSTEM_ CHECK_1" 1 "INIT_FAIL" 0 "INIT" ;
+VAL_ 73 EVCU_mcState 4 "BRAKE" 3 "REVERSE_T" 2 "FORWARD_T" 1 "ZERO_T" 0 "INIT" ;
+VAL_ 65 VCU_RD_errorcode 2 "DISPLAY CAN Fault" 88 "BMS com Error" 69 "Aux Low" 65 "BMS CAN Fault" 64 "MC CAN Fault" 128 "No Fault" 89 "Contactor Init Fault" 68 "DC-DC Fault" 67 "OBC CAN Fault" 9 "Description for the value '0x9'" 8 "Description for the value '0x8'" 7 "Description for the value '0x7'" 6 "Description for the value '0x6'" 5 "Description for the value '0x5'" 4 "Description for the value '0x4'" ;
+VAL_ 64 VCU_RD_mode 4 "Hill Mode" 3 "Sport Mode" 2 "Normal Mode" 1 "Eco Mode" 0 "Turtle Mode" ;
+VAL_ 64 VCU_RD_current_state 8 "CRIT_FAULT" 7 "LOW_POWER" 6 "FAULT" 5 "TEMP_FAULT" 4 "CHARGING" 3 "REVERSE" 2 "FORWARD" 1 "NEUTRAL" 0 "POWER_ON" ;
+VAL_ 97 CC_RX_dataID 5 "MSG_5" 4 "MSG_4" 3 "MSG_3" 2 "MSG_2" 1 "MSG_1" 0 "MSG_0" ;
+VAL_ 97 EVCU_state_CC 8 "CRIT_FAULT" 7 "LOW_POWER" 6 "FAULT" 5 "TEMP_FAULT" 4 "CHARGING" 3 "REVERSE" 2 "FORWARD" 1 "NEUTRAL" 0 "POWER_ON" ;
+VAL_ 98 CC_TX_dataID 5 "MSG_5" 4 "MSG_4" 3 "MSG_3" 2 "MSG_2" 1 "MSG_1" 0 "MSG_0" ;
+VAL_ 98 CC_CCS_connected 1 "connected" 0 "not connected" ;
+VAL_ 98 CC_CHADEMO_connected 1 "connected" 0 "not connected" ;
+VAL_ 98 CC_L2_connected 1 "connected" 0 "not connected" ;
+VAL_ 98 CC_GBT_connected 1 "connected" 0 "not connected" ;
+VAL_ 2566907380 OBC_control 1 "not_charging" 0 "charging" ;
+VAL_ 49 contactor_on_inverse 2 "on" 0 "off" ;
+VAL_ 49 contactor_on 1 "on" 0 "off" ;
+VAL_ 49 GBT_connected_BMS 1 "connected" 0 "not connected" ;
+VAL_ 49 fireMode_BMS 1 "fire_modeON" 0 "fire_modeOFF" ;
+VAL_ 49 L2_charger_connected_BMS 1 "connected" 0 "not connected" ;
+VAL_ 49 EVCU_state_BMS 8 "CRIT_FAULT" 7 "LOW_POWER" 6 "FAULT" 5 "TEMP_FAULT" 4 "CHARGING" 3 "REVERSE" 2 "FORWARD" 1 "NEUTRAL" 0 "POWER_ON" ;
+VAL_ 2432176282 fault 1 "error" 0 "normal" ;
+VAL_ 2432176282 brake 1 "brake" 0 "Unbrake" ;
+VAL_ 2432176282 controller_state 1 "error" 0 "normal" ;
+VAL_ 2432176282 direction 1 "inversion" 0 "possitive turn" ;
+VAL_ 2432176282 motorState 1 "error" 0 "normal" ;
+VAL_ 2432176282 motor_rotation 1 "Rotation" 0 "Stop" ;
+VAL_ 2432176282 cruise 1 "cruise" 0 "Uncruising" ;
+VAL_ 2432176282 speedMode 2 "high_speed" 1 "medium_speed" 0 "low_speed" ;
+VAL_ 2432176282 gear_state 2 "Reverse" 1 "Forward" 0 "P" ;
+VAL_ 50 Packet_ID 5 "MSG_5" 4 "MSG_4" 3 "MSG_3" 2 "MSG_2" 1 "MSG_1" 0 "MSG_0" ;
+VAL_ 50 opMode 4 "emergency" 3 "error" 2 "ok" 1 "init" 0 "start" ;
+VAL_ 50 chrg_complete_flag 1 "charge_complete" 0 "charge_incomplete" ;
+VAL_ 50 cv_mode 1 "CV_modeon" 0 "CV_modeoff" ;
+VAL_ 50 chiller_enable 1 "on" 0 "off" ;
+VAL_ 525 VehicleGear 2 "Reverse" 1 "Drive" 0 "Neutral/Park" ;
+VAL_ 559 PWMinValid 1 "Yes" 0 "No" ;
+VAL_ 559 AnalogInValid 1 "Yes" 0 "No" ;
+VAL_ 559 PressureSensorFault 1 "Yes" 0 "No" ;
+VAL_ 559 HillHoldActive 1 "Yes" 0 "No" ;
+VAL_ 559 DriverBrakeApplied 1 "Yes" 0 "No" ;
+VAL_ 559 BrakeServoStatus 1 "Brake OK / Ready to Actuate" 0 "Brake Error" ;
+VAL_ 559 BrakeFluidPresent 1 "Yes" 0 "No" ;
+VAL_ 559 BrakeApplied 1 "Yes" 0 "No" ;
+VAL_ 273 quick_charge_contactor 1 "NO POWER" 2 "ENABLING" ;
+VAL_ 273 slow_charge_contactor 1 "DISCONNECTED" 2 "CLOSED" ;
+VAL_ 273 main_positive_contactor 1 "DISCONNECTED" 2 "CLOSED" ;
+VAL_ 273 PTC_contactor 1 "DISCONNECTED" 2 "CLOSED" ;
+VAL_ 273 AC_contactor 1 "DISCONNECTED" 2 "CLOSED" ;
+VAL_ 273 HCM_shutsdown_hibernation 0 "UNACTIVATED" 1 "ACTIVATION" ;
+VAL_ 273 HCM_adhesion_detection 0 "UNACTIVATED" 1 "ACTIVATION" ;
+VAL_ 305 OBC_instruct 1 "SHUTDOWN" 2 "ENABLE" ;
+VAL_ 576 DCDC_running_state 0 "INITIALIZATION" 1 "SELF_PASS" 2 "HIGH_PRESSURE_ON_TOP" 3 "ENABLED" 5 "FAULT" 6 "SHUTDOWN" ;
+VAL_ 576 fault_grade 0 "NORMAL_GRADE" 1 "1_LOW_MICRO_CLASSES" 2 "2_ARE_MEDIUM_&_GRADES" 3 "3_ARE_SERVERE" ;
+VAL_ 576 output_overpressure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 576 input_underpressure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 576 enter_overpressure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 576 overtemperature_failure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 576 self_inspection_fault 0 "NORMAL" 1 "FAULT" ;
+VAL_ 576 outptut_overflow 0 "NORMAL" 1 "FAULT" ;
+VAL_ 576 communication_failure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 352 HCM_running_state 0 "INITIALIZATION" 1 "SELF_INSPECTION_PASS_ON_HIGH_PRESSURE" 2 "HIGH_PRESSURE_ALREADY_ON_WAITING_ENABLING" 3 "ALREADY_ENABLED" 5 "FAILURE_UNABLE_TO_RUN" 6 "SHUTDOWN" ;
+VAL_ 352 fault_grade 0 "NORMAL_GRADE" 1 "1_LOW_MICRO_CLASSES" 2 "2_ARE_MEDIUM_&_GRADES" 3 "3_ARE_SEVERE" ;
+VAL_ 352 ON_file_status 0 "UNACTIVATED" 1 "ACTIVATION" ;
+VAL_ 352 charging_wake_up_state 0 "UNACTIVATED" 1 "ACTIVATION" ;
+VAL_ 352 HCM_pre_charge_state 0 "OPEN_CIRCUIT" 1 "PRE_CHARGE_PROCESS" 2 "PRE_CHARGE_COMPLETED" 3 "PRE_CHARGE_FAULT" 4 "PRE_CHARGE_&_LOCKING" 5 "NORMAL_DRIRVE" ;
+VAL_ 352 main_positive_contactor 0 "DISCONNECT" 1 "CLOSED" ;
+VAL_ 352 pre_charge_contactor_status 0 "DISCONNECT" 1 "CLOSED" ;
+VAL_ 352 PTC_contactor_status 0 "DISCONNECT" 1 "CLOSED" ;
+VAL_ 352 AC_contactor_status 0 "DISCONNECT" 1 "CLOSED" ;
+VAL_ 352 slow_charge_contactor_state 0 "DISCONNECT" 1 "CLOSED" ;
+VAL_ 352 quick_charge_contactor_state 0 "DISCONNECT" 1 "CLOSED" ;
+VAL_ 352 self_inspection_fault 0 "NO" 1 "YES" ;
+VAL_ 352 high_voltage_interlock_fault 0 "NORMAL" 1 "FAULT" ;
+VAL_ 352 low_voltage_power_supply_failure 0 "NORMAL" 1 "UNDER_PRESSURE" 2 "OVERPRESSURE" 3 "SAMPLING_FAULT" ;
+VAL_ 352 VCU_communication_failure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 352 BMS_communication_failure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 352 main_positive_contactor_is_fault 0 "NORMAL" 1 "ADHESIVE" 2 "OPEN_THE_WAY" ;
+VAL_ 352 pre_charge_contactor_fault 0 "NORMAL" 1 "ADHESIVE" 2 "OPEN_THE_WAY" ;
+VAL_ 352 PTC_contactor_fault 0 "NORMAL" 1 "ADHESIVE" 2 "OPEN_THE_WAY" ;
+VAL_ 352 AC_contactor_fault 0 "NORMAL" 1 "ADHESIVE" 2 "OPEN_THE_WAY" ;
+VAL_ 352 fast_charge_contactor_fault 0 "NORMAL" 1 "ADHESIVE" 2 "OPEN_THE_WAY" ;
+VAL_ 352 slow_charge_contactor_fault 0 "NORMAL" 1 "ADHESIVE" 2 "OPEN_THE_WAY" ;
+VAL_ 352 open_cover_fault 0 "NORMAL" 1 "FAULT" ;
+VAL_ 355 busoff_state 0 "NORMAL" 1 "BUS_OFF" ;
+VAL_ 880 running_state 0 "INITIALIZATION" 1 "SELF_PASS" 2 "HIGH_PRESSURE_ON_TOP" 3 "ENABLED" 5 "FAULT" 6 "SHUTDOWN" ;
+VAL_ 880 fault_grade 0 "NORMAL_GRADE" 1 "LOW_MICRO)CLASSES" 2 "2_ARE_MEDIUM_&_GRADES" 3 "3_ARE_SEVERE" ;
+VAL_ 880 PFC_underVoltage 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 PFC_overVoltage 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 OBC_lack_of_phase 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 output_overflow 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 over_temperature_failure 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 output_underVoltage 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 output_overVoltage 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 input_underVoltage 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 enter_overVoltage 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 hardware_malfunction 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 communication_timeout 0 "NORMAL" 1 "FAULT" ;
+VAL_ 880 self_inspection_fault 0 "NORMAL" 1 "FAULT" ;
+VAL_ 788 mode 0 "Manual_Mode" 1 "Wire_Control_Mode" ;
+
